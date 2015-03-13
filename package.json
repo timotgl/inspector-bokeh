@@ -1,0 +1,11 @@
+{
+  "name": "inspector-bokeh",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/timotgl/inspector-bokeh.git"
+  },
+  "dependencies": {
+    "canvas": "1.1.6",
+    "canvasfilters": "git://github.com/kig/canvasfilters.git"
+  }
+}

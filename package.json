@@ -4,8 +4,11 @@
       "type": "git",
       "url": "https://github.com/timotgl/inspector-bokeh.git"
   },
+  "scripts": {
+  	"build": "browserify measure_blur.js --s measureBlur > dist/measure_blur.js"
+  },
   "dependencies": {
-    "canvas": "1.1.6",
+    "canvas": "1.6.2",
     "canvasfilters": "git://github.com/kig/canvasfilters.git"
   }
 }

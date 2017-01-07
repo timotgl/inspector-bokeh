@@ -5,22 +5,67 @@
         #canvas {
           border: 1px solid black;
         }
+        @keyframes spinner {
+          to {transform: rotate(360deg);}
+        }
+         
+        .spinner:before {
+          content: '';
+          box-sizing: border-box;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 120px;
+          height: 120px;
+          margin-top: -10px;
+          margin-left: -10px;
+          border-radius: 50%;
+          border: 2px solid #ccc;
+          border-top-color: #333;
+          animation: spinner .6s linear infinite;
+        }
+
+        #blur_score {
+          font-size: 20px;
+          color: red;
+        }
       </style>
     </head>
     <body>
         <h1>Inspector Bokeh demo</h1>
         <form>
-            <label for="upload_image">Upload an image to measure its blurriness:</label>
-            <input type="file" id="upload_image">
+            <label for="upload_image">
+              Upload an image to measure its blurriness:
+              <input type="file" id="upload_image" accept="image/*" capture="camera">
+            </label>
+            
+            <br />
+            <label>
+              <input type="checkbox" id="workerCheckbox" checked>
+              Use worker (async calculation)
+            </label>
+
+            <div class="spinner" style="display: none"></div>
         </form>
         <p id="blur_score"></p>
+        <p id="calculation_time"></p>
         <canvas id="canvas"></canvas>
 
         <script src="dist/measure_blur.js"></script>
         <script>
+          var workerCheckbox = document.querySelector('#workerCheckbox');
+          var blurScore = document.querySelector('#blur_score');
+          var spinner = document.querySelector('.spinner');
+          var canvas = document.querySelector('#canvas');
+          var calculationTime;
+
+          measureBlur.setup({
+            workerURL: "dist/measure_blur_worker.js"
+          });
+
           function readImageFile(rawFile) {
             return new Promise(function(resolve, reject) {
-              if (!rawFile) return;
+              if (!rawFile) return reject();
 
               var reader = new FileReader();
               reader.onload = function(readerEvent) {
@@ -39,22 +84,35 @@
               reader.readAsDataURL(rawFile);
             });
           }
+
+          function showScore(score) {
+            blurScore.innerHTML = 'Score: ' + score.avg_edge_width_perc.toFixed(2);
+            console.log('Detail blur score:', score);
+            document.querySelector('#calculation_time').innerHTML = 'Calculation time: ' + ((Date.now() - calculationTime)/1000).toFixed(3) + ' sec';
+            spinner.style.display = 'none';
+          }
+
           function handleImageInput(e) {
             var done = function(img) {
-              var canvas = document.querySelector('#canvas');
               var context = canvas.getContext("2d");
 
               canvas.width = img.width;
               canvas.height = img.height;
               context.drawImage(img.data, 0, 0);
 
-
-              var score = measureBlur(context.getImageData(0, 0, canvas.width, canvas.height));
-              console.info('Blur score: ' + Number((score.avg_edge_width_perc).toFixed(2)));
-              console.log('Detail blur score:', score);
+              var canvasData = context.getImageData(0, 0, canvas.width, canvas.height);
+              
+              if (workerCheckbox.checked) {
+                measureBlur
+                .async(canvasData)
+                .then(showScore);
+              } else {
+                showScore(measureBlur(canvasData));
+              }
             };
-            var fail = console.error;
-            readImageFile(e.target.files[0]).then(done, fail);
+            spinner.style.display = 'block';
+            calculationTime = Date.now();
+            readImageFile(e.target.files[0]).then(done, console.error);
           }
 
           document

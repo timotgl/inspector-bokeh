@@ -1,6 +1,6 @@
 # Inspector Bokeh
 
-Experimental JavaScript library to measure blur in images. See this [blog post](http://www.codeoclock.com/2015/06/05/blur-detection-javascript/) for more info.
+Experimental JavaScript library to measure blur in images. See this [blog post](https://medium.com/dawandadev/canvas-based-blur-detection-with-javascript-8d9dc25cb7d5) for more info.
 
 ## Prerequisites
 * [Node.js](https://nodejs.org/)

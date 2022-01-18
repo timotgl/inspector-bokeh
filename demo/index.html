@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Inspector Bokeh demo</title>
+    <link href="demo.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Inspector Bokeh demo</h1>
+    <form>
+      <label for="upload_image">
+        Upload an image to measure its blur:
+        <input type="file" id="upload_image" accept="image/*" />
+      </label>
+      <br />
+      <div class="spinner" style="display: none"></div>
+    </form>
+    <p id="blur_score"></p>
+    <p id="calculation_time"></p>
+    <table id="details"></table>
+    <canvas></canvas>
+    <script src="demo.js"></script>
+  </body>
+</html>

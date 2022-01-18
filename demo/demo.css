@@ -1,0 +1,44 @@
+body {
+  font-family: sans-serif;
+}
+
+canvas {
+  border: 1px solid black;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  animation: spinner 0.6s linear infinite;
+}
+
+#blur_score {
+  font-size: 20px;
+  color: red;
+}
+
+table#details {
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+table#details td {
+  border: 1px solid black;
+  padding: 4px;
+}

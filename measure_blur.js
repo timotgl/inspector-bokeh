@@ -10,8 +10,8 @@ function detectEdges(imageData) {
     }
     sobelKernel = Filters.getFloat32Array(
         [1, 0, -1,
-            2, 0, -2,
-            1, 0, -1]);
+         2, 0, -2,
+         1, 0, -1]);
     return Filters.convolve(greyscaled, sobelKernel, true);
 }
 

@@ -12,7 +12,7 @@
   	"build": "browserify measure_blur.js --s measureBlur > dist/measure_blur.js"
   },
   "dependencies": {
-    "canvas": "1.6.2",
+    "canvas": "2.9.0",
     "canvasfilters": "git://github.com/kig/canvasfilters.git"
   }
 }

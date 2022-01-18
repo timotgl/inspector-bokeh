@@ -10,14 +10,15 @@
     "url": "https://github.com/timotgl/inspector-bokeh.git"
   },
   "scripts": {
-    "start": "node ./src/index.js",
-    "build": "browserify src/measureBlur.js --s measureBlur > ./dist/measure_blur.js"
+    "start": "node src/cli.js",
+    "demo": "node ./node_modules/http-server/bin/http-server ./demo"
   },
   "dependencies": {
     "canvas": "2.9.0",
     "canvasfilters": "git://github.com/kig/canvasfilters.git"
   },
   "devDependencies": {
+    "http-server": "14.1.0",
     "prettier": "2.5.1"
   }
 }

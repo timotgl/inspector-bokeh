@@ -19,7 +19,7 @@ Experimental JavaScript library to measure blur in images. See this [blog post](
 
 ## Troubleshooting
 
-### macOS 12 "Monterey" - “canvas.node” can’t be opened because Apple cannot check it for malicious software
+### On macOS 12 Monterey: canvas.node can’t be opened
 
 Full error message:
 ```

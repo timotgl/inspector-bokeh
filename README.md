@@ -10,11 +10,11 @@ Experimental JavaScript library to measure blur in images. See this [blog post](
 1. Make sure [Cairo](http://cairographics.org/) is installed in your system, the [canvas](https://github.com/Automattic/node-canvas) module requires this. [How to install node-canvas](https://github.com/Automattic/node-canvas/wiki).
    * On OS X or macOS with [Homebrew](http://brew.sh/): `brew install pkg-config cairo pango libpng jpeg giflib librsvg`
 1. `npm install`
-1. `node measure_blur_node.js path/to/image/file.jpg`
+1. `node ./src/measure_blur_node.js path/to/image/file.jpg`
 
 ## Prepare and run browser demo - under construction
 1. `npm install`
-2. `browserify measure_blur_browserify.js > measure_blur_browser.js`
+2. `browserify ./src/measure_blur_browserify.js > ./src/measure_blur_browser.js`
 3. Open `demo.html` in your browser.
 
 ## Troubleshooting
@@ -32,7 +32,7 @@ This software needs to be updated. Contact the developer for more information.
  * Right-click the file `canvas.node` file, select `Open with` and choose `Other...`.
  * Make sure `Enable: All Applications` is selected. Pick `/Applications/Utilities/Terminal.app` (the default macOS Terminal).
  * Confirm that you really want to open it.
- * Run `node measure_blur_node.js path/to/image/file.jpg` again - this time an `Open` button will be displayed in the dialog.
+ * Run `node ./src/measure_blur_node.js path/to/image/file.jpg` again - this time an `Open` button will be displayed in the dialog.
  * After choosing `Open` once, subsequent attempts of running the script will work without showing any dialog.
 
 This possibly happens only if you cloned this repo onto a Volume mounted from a disk image file (`.dmg`). The reason is macOS' Gatekeeper trying to protect you from running software from an "unidentified developer".

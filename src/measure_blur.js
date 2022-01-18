@@ -1,4 +1,6 @@
-var Filters = require('canvasfilters').Filters;
+import canvasFilters from 'canvasfilters';
+
+const { Filters } = canvasFilters;
 
 function detectEdges(imageData) {
     var greyscaled, sobelKernel;
@@ -122,4 +124,4 @@ measureBlur.setup = function(configExt) {
     Object.assign(config, configExt);
 }
 
-module.exports = measureBlur;
+export default measureBlur;

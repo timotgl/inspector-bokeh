@@ -10,7 +10,7 @@
       "url": "https://github.com/timotgl/inspector-bokeh.git"
   },
   "scripts": {
-  	"build": "browserify measure_blur.js --s measureBlur > dist/measure_blur.js"
+  	"build": "browserify ./src/measure_blur.js --s measureBlur > ./dist/measure_blur.js"
   },
   "dependencies": {
     "canvas": "2.9.0",

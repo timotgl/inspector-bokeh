@@ -6,12 +6,12 @@
   "license": "MIT",
   "type": "module",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/timotgl/inspector-bokeh.git"
+    "type": "git",
+    "url": "https://github.com/timotgl/inspector-bokeh.git"
   },
   "scripts": {
-  	"build": "browserify ./src/measure_blur.js --s measureBlur > ./dist/measure_blur.js"
     "start": "node ./src/index.js",
+    "build": "browserify src/measureBlur.js --s measureBlur > ./dist/measure_blur.js"
   },
   "dependencies": {
     "canvas": "2.9.0",

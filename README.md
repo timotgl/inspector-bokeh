@@ -29,7 +29,7 @@ This software needs to be updated. Contact the developer for more information.
 ```
 
  * If this error pops up, click `Show in Finder`.
- * Right-click the file `canvas.node` file, select `Open with` and choose `Other...`.
+ * Right-click the file `canvas.node`, select `Open with` and choose `Other...`.
  * Make sure `Enable: All Applications` is selected. Pick `/Applications/Utilities/Terminal.app` (the default macOS Terminal).
  * Confirm that you really want to open it.
  * Run `npm start path/to/image/file.jpg` again - this time an `Open` button will be displayed in the dialog.

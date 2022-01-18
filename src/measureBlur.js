@@ -5,7 +5,7 @@ const { Filters } = canvasFilters;
 /**
  * I forgot why exactly I was doing this.
  * It somehow improves edge detection to blur the image a bit beforehand.
- * But we don't want to this it for very small images.
+ * But we don't want to do this for very small images.
  */
 const BLUR_BEFORE_EDGE_DETECTION_MIN_WIDTH = 360; // pixels
 const BLUR_BEFORE_EDGE_DETECTION_DIAMETER = 5.0; // pixels

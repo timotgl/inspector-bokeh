@@ -11,6 +11,7 @@
   },
   "scripts": {
   	"build": "browserify ./src/measure_blur.js --s measureBlur > ./dist/measure_blur.js"
+    "start": "node ./src/index.js",
   },
   "dependencies": {
     "canvas": "2.9.0",

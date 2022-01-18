@@ -8,7 +8,7 @@
         @keyframes spinner {
           to {transform: rotate(360deg);}
         }
-         
+
         .spinner:before {
           content: '';
           box-sizing: border-box;
@@ -35,10 +35,10 @@
         <h1>Inspector Bokeh demo</h1>
         <form>
             <label for="upload_image">
-              Upload an image to measure its blurriness:
+              Upload an image to measure its blur:
               <input type="file" id="upload_image" accept="image/*" capture="camera">
             </label>
-            
+
             <br />
             <label>
               <input type="checkbox" id="workerCheckbox" checked>
@@ -101,7 +101,7 @@
               context.drawImage(img.data, 0, 0);
 
               var canvasData = context.getImageData(0, 0, canvas.width, canvas.height);
-              
+
               if (workerCheckbox.checked) {
                 measureBlur
                 .async(canvasData)

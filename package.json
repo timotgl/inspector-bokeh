@@ -5,6 +5,7 @@
   "version": "1",
   "license": "MIT",
   "type": "module",
+  "main": "src/measureBlur.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/timotgl/inspector-bokeh.git"

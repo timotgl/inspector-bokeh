@@ -4,6 +4,7 @@
   "author": "Timo Taglieber <mail@timotaglieber.de>",
   "version": "0.1.1",
   "license": "MIT",
+  "type": "module",
   "repository": {
       "type": "git",
       "url": "https://github.com/timotgl/inspector-bokeh.git"

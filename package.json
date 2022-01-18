@@ -2,7 +2,7 @@
   "name": "inspector-bokeh",
   "description": "Experimental library to measure blur in images",
   "author": "Timo Taglieber <mail@timotaglieber.de>",
-  "version": "0.1.1",
+  "version": "1",
   "license": "MIT",
   "type": "module",
   "repository": {

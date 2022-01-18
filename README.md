@@ -2,20 +2,16 @@
 
 Experimental JavaScript library to measure blur in images. See this [blog post](https://medium.com/dawandadev/canvas-based-blur-detection-with-javascript-8d9dc25cb7d5) for more info.
 
+[Live demo](https://timotaglieber.de/inspector-bokeh)
+
 ## Prerequisites
 * [Node.js](https://nodejs.org/)
-* [Browserify](http://browserify.org/)
 
-## Run with Node.js
+## Usage
 1. Make sure [Cairo](http://cairographics.org/) is installed in your system, the [canvas](https://github.com/Automattic/node-canvas) module requires this. [How to install node-canvas](https://github.com/Automattic/node-canvas/wiki).
    * On OS X or macOS with [Homebrew](http://brew.sh/): `brew install pkg-config cairo pango libpng jpeg giflib librsvg`
 1. `npm install`
 1. `npm start path/to/image/file.jpg`
-
-## Prepare and run browser demo - under construction
-1. `npm install`
-2. `browserify ./src/measure_blur_browserify.js > ./src/measure_blur_browser.js`
-3. Open `demo.html` in your browser.
 
 ## Troubleshooting
 

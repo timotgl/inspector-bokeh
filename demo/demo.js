@@ -34,7 +34,8 @@
     worker.postMessage({ imageData });
   };
 
-  const blurScore = document.querySelector('#blur_score');
+  const blurScore = document.querySelector('#score #value');
+  const blurScoreExplanation = document.querySelector('#score #explanation');
   const scoreDetails = document.querySelector('#details');
   const spinner = document.querySelector('.spinner');
   const canvas = document.querySelector('canvas');
@@ -51,12 +52,14 @@
       value = score[key];
       scoreDetails.innerHTML += `<tr><td>${key}</td><td>${value}</td></tr><tr>`;
     });
+    blurScoreExplanation.style.display = 'block';
     spinner.style.display = 'none';
   };
 
   const measureBlurAndShowScore = (changeFileInputEvent) => {
     spinner.style.display = 'block';
     scoreDetails.innerHTML = '';
+    blurScoreExplanation.style.display = 'none';
     calculationTime = Date.now();
     readImageFile(changeFileInputEvent.target.files[0]).then((img) => {
       const context = canvas.getContext('2d');

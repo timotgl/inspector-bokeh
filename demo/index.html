@@ -7,13 +7,21 @@
     <h1>Inspector Bokeh demo</h1>
     <p>
       Select an image to measure its blur. It will only be processed in your
-      browser, not uploaded anywhere.
+      browser, not uploaded anywhere. Your browser needs to support ES2015
+      modules in web workers.
     </p>
     <p>
       <input type="file" id="upload_image" accept="image/*" />
     </p>
     <div class="spinner" style="display: none"></div>
-    <p id="blur_score"></p>
+    <div id="score">
+      <p id="value"></p>
+      <p id="explanation" style="display: none">
+        Higher score means more blur. Sharp images should have a score <= 1.<br />
+        Note that the algorithm is experimental and produces lots of false
+        positives.
+      </p>
+    </div>
     <p id="calculation_time"></p>
     <table id="details"></table>
     <canvas height="1"></canvas>

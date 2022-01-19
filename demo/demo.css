@@ -43,10 +43,19 @@ canvas[width] {
   animation: spinner 0.6s linear infinite;
 }
 
-#blur_score {
-  font-size: 20px;
+#score {
   color: #ff0059;
+}
+
+#score #value {
+  font-size: 2rem;
   font-weight: bold;
+  margin-bottom: 0;
+}
+
+#score #explanation {
+  margin-top: 0;
+  font-size: 0.8rem;
 }
 
 #blur_score:empty,

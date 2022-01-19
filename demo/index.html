@@ -1,22 +1,40 @@
-<html>
+<html lang="en">
   <head>
     <title>Inspector Bokeh demo</title>
     <link href="demo.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <h1>Inspector Bokeh demo</h1>
-    <form>
-      <label for="upload_image">
-        Upload an image to measure its blur:
-        <input type="file" id="upload_image" accept="image/*" />
-      </label>
-      <br />
-      <div class="spinner" style="display: none"></div>
-    </form>
+    <p>
+      Select an image to measure its blur. It will only be processed in your
+      browser, not uploaded anywhere.
+    </p>
+    <p>
+      <input type="file" id="upload_image" accept="image/*" />
+    </p>
+    <div class="spinner" style="display: none"></div>
     <p id="blur_score"></p>
     <p id="calculation_time"></p>
     <table id="details"></table>
-    <canvas></canvas>
+    <canvas height="1"></canvas>
+    <p>
+      The used algorithm is loosely based on the 2002 paper
+      <a href="https://stefan.winklerbros.net/Publications/icip2002.pdf"
+        >"A no-reference perceptual blur metric" by Pina Marziliano, Frederic
+        Dufaux, Stefan Winkler, and Touradj Ebrahimi</a
+      >.
+    </p>
+    <p>
+      Visit the
+      <a href="https://github.com/timotgl/inspector-bokeh">GitHub project</a>
+      to see the code, this
+      <a
+        href="https://medium.com/dawandadev/canvas-based-blur-detection-with-javascript-8d9dc25cb7d5"
+        >blog post</a
+      >
+      describing how it works, or the
+      <a href="https://timotaglieber.de/">author's homepage</a>.
+    </p>
     <script src="demo.js"></script>
   </body>
 </html>

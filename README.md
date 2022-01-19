@@ -1,17 +1,17 @@
 # Inspector Bokeh
 
-Experimental JavaScript library to measure blur in images. See this [blog post](https://medium.com/dawandadev/canvas-based-blur-detection-with-javascript-8d9dc25cb7d5) for more info.
+Experimental JavaScript library to measure blur in images. Try out the [live demo](https://timotaglieber.de/inspector-bokeh) or read this [blog post](https://medium.com/dawandadev/canvas-based-blur-detection-with-javascript-8d9dc25cb7d5) to find out more. 
 
-[Live demo](https://timotaglieber.de/inspector-bokeh)
+## Setup
 
-## Prerequisites
-* [Node.js](https://nodejs.org/)
-
-## Usage
+1. You need [Node.js](https://nodejs.org/).
 1. Make sure [Cairo](http://cairographics.org/) is installed in your system, the [canvas](https://github.com/Automattic/node-canvas) module requires this. [How to install node-canvas](https://github.com/Automattic/node-canvas/wiki).
    * On OS X or macOS with [Homebrew](http://brew.sh/): `brew install pkg-config cairo pango libpng jpeg giflib librsvg`
 1. `npm install`
-1. `npm start path/to/image/file.jpg`
+
+## Usage
+
+Simply run `npm start path/to/image/file.jpg`
 
 ## Troubleshooting
 

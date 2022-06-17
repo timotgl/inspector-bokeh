@@ -2,7 +2,7 @@ import canvasModule from 'canvas';
 import measureBlur from './measureBlur.js';
 
 if (process.argv.length < 3) {
-  console.info('Usage: node measureBlur.js path/to/image/file.jpg');
+  console.info('Usage: node cli.js path/to/image/file.jpg');
   process.exit(0);
 }
 
